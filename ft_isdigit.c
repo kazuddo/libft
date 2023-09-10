@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 15:43:22 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/10 16:31:56 by kdodo            ###   ########.fr       */
+/*   Created: 2023/09/10 16:14:09 by kdodo             #+#    #+#             */
+/*   Updated: 2023/09/10 17:19:44 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_isdigit(int c)
 {
-	int len;
-
-	len = 0;
-	while (*str != '\0')
-	{
-		len++;
-		str++;
-	}
-	return (len);
+	if ('0' <= c && c <= '9')
+		return (1);
+	else
+		return (0);
 }

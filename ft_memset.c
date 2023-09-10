@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 15:43:22 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/10 16:31:56 by kdodo            ###   ########.fr       */
+/*   Created: 2023/09/10 16:32:26 by kdodo             #+#    #+#             */
+/*   Updated: 2023/09/10 16:47:36 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	*ft_memset(void *buf, int ch, size_t n)
 {
-	int len;
+	int				i;
+	unsigned char	*tmp;
 
-	len = 0;
-	while (*str != '\0')
+	i = 0;
+	tmp = (unsigned char *)buf;
+	while (i < n)
 	{
-		len++;
-		str++;
+		tmp[i] = ch;
+		i++;
 	}
-	return (len);
+	return (buf);
 }
+
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char str[] = "0123456789";
+
+// 	ft_memset(str + 2, '*', 5);
+
+// 	printf("%s\n", str);
+
+// 	return (0);
+// }

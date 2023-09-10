@@ -1,26 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 15:43:22 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/10 16:31:56 by kdodo            ###   ########.fr       */
+/*   Created: 2023/09/10 17:17:25 by kdodo             #+#    #+#             */
+/*   Updated: 2023/09/10 17:23:11 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
-{
-	int len;
-
-	len = 0;
-	while (*str != '\0')
-	{
-		len++;
-		str++;
-	}
-	return (len);
-}
+size_t	ft_strlcpy(char *dst, const char *src, )
