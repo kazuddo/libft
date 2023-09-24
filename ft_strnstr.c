@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kazukipc <kazukipc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 15:37:33 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/21 17:43:59 by kazukipc         ###   ########.fr       */
+/*   Created: 2023/09/21 21:02:45 by kazukipc          #+#    #+#             */
+/*   Updated: 2023/09/21 21:21:10 by kazukipc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t	i;
+	size_t	j;
 
-void	*ft_memset(void *buf, int ch, size_t n);
-size_t	ft_strlen(const char *str);
-
-
-#endif
+	if (needle[0] == '\0')
+		return ((char *)haystack);
+	j = 0;
+	while (j < len && haystack[j])
+	{
+		i = 0;
+		while (needle[i] && haystack[j] && needle[i] == haystack[j])
+		{
+			i++;
+			j++;
+		}
+		if (needle[i] == '\0')
+			return ((char *)&haystack[j - i]);
+		j = j - i + 1;
+	}
+	return (0);
+}

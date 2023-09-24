@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kazukipc <kazukipc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 15:37:33 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/21 17:43:59 by kazukipc         ###   ########.fr       */
+/*   Created: 2023/09/21 20:15:33 by kazukipc          #+#    #+#             */
+/*   Updated: 2023/09/21 21:21:35 by kazukipc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	unsigned char	*p;
+	int				i;
 
-void	*ft_memset(void *buf, int ch, size_t n);
-size_t	ft_strlen(const char *str);
-
-
-#endif
+	i = 0;
+	p = s;
+	while (i < n)
+	{
+		if (*p == c)
+			return (*p);
+		p++;
+		i++;
+	}
+	return (0);
+}

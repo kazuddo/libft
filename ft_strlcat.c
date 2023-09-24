@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kazukipc <kazukipc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 15:37:33 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/21 17:43:59 by kazukipc         ###   ########.fr       */
+/*   Created: 2023/09/21 17:34:40 by kazukipc          #+#    #+#             */
+/*   Updated: 2023/09/21 17:52:28 by kazukipc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	total_size;
+	size_t	src_size;
+	size_t	dst_size;
 
-void	*ft_memset(void *buf, int ch, size_t n);
-size_t	ft_strlen(const char *str);
+	src_size = ft_strlen(src);
+	dst_size = ft_strlen(dst);
+	if(size <= dst_size)
+		return (size + src_size);
+	
+	
+}
 
-
-#endif
+// not yet

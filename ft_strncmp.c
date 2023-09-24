@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kazukipc <kazukipc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 15:37:33 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/21 17:43:59 by kazukipc         ###   ########.fr       */
+/*   Created: 2023/09/21 20:11:49 by kazukipc          #+#    #+#             */
+/*   Updated: 2023/09/21 20:14:58 by kazukipc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-#include <unistd.h>
-#include <stdlib.h>
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	int	i;
 
-void	*ft_memset(void *buf, int ch, size_t n);
-size_t	ft_strlen(const char *str);
-
-
-#endif
+	i = 0;
+	while (i < n)
+	{
+		if (s1 != s2)
+			return (s1 - s2);
+	}
+	return (0);
+}
