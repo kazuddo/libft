@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 16:49:11 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/24 15:20:03 by kdodo            ###   ########.fr       */
+/*   Created: 2023/09/24 17:44:10 by kdodo             #+#    #+#             */
+/*   Updated: 2023/09/24 17:57:26 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	ft_memset(s, 0, n);
+	size_t	len;
+	size_t	i;
+	char	*str;
+
+	len = ft_strlen(s);
+	str = (char *)malloc(sizeof (char) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (str[i])
+	{
+		str[i] = f(i, s[i]);
+		i++;
+	}
+	return (str);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char str[] = "0123456789";
-
-// 	ft_bzero(str + 2, 5);
-
-// 	printf("%s\n", str);
-
-// 	return (0);
-// }

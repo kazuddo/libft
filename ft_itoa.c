@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 16:49:11 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/24 15:20:03 by kdodo            ###   ########.fr       */
+/*   Created: 2023/09/24 17:34:07 by kdodo             #+#    #+#             */
+/*   Updated: 2023/09/24 17:43:53 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_itoa(int n)
 {
-	ft_memset(s, 0, n);
+	size_t	len;
+	size_t	flag;
+	char	*str;
+
+	len = 1;
+	flag = 0;
+	while (n / 10 > 0)
+		len++;
+	if (len < 0)
+	{
+		len++;
+		flag = 1;
+	}
+	str = (char * )malloc(sizeof(char) * (len + 1));
+	while(len > 0)
+	{
+		str[len] = n % 10 - '0';
+		if(len == 0 && flag == 1)
+			str[len] = '-';
+	}
+	return (str);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char str[] = "0123456789";
-
-// 	ft_bzero(str + 2, 5);
-
-// 	printf("%s\n", str);
-
-// 	return (0);
-// }

@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 16:49:11 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/24 15:20:03 by kdodo            ###   ########.fr       */
+/*   Created: 2023/09/24 15:29:18 by kdodo             #+#    #+#             */
+/*   Updated: 2023/09/24 15:39:21 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	ft_memset(s, 0, n);
+	int		i;
+	char	*str;
+
+	str = (char *)malloc(sizeof(char) * len);
+	if(!str)
+		return (NULL);
+	i = 0;
+	while(i <= len)
+	{
+		str[i] = s[i + start];
+		i++;
+	}
+	return (str);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char str[] = "0123456789";
-
-// 	ft_bzero(str + 2, 5);
-
-// 	printf("%s\n", str);
-
-// 	return (0);
-// }

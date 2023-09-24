@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/10 16:49:11 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/24 15:20:03 by kdodo            ###   ########.fr       */
+/*   Created: 2023/09/24 15:40:01 by kdodo             #+#    #+#             */
+/*   Updated: 2023/09/24 15:49:02 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	ft_memset(s, 0, n);
+	size_t	len;
+	size_t	i;
+	size_t	j;
+	char	*str;
+
+	len = ft_strlen(s1) + ft_strlen(s2);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while(s1[i])
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	while(s2[j])
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	return (str);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char str[] = "0123456789";
-
-// 	ft_bzero(str + 2, 5);
-
-// 	printf("%s\n", str);
-
-// 	return (0);
-// }
