@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 20:11:49 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/25 16:29:09 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/25 17:29:32 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (s1 != s2)
-			return (s1 - s2);
+		if (s1[i] > s2[i])
+			return (s1[i] - s2[i]);
+		i++;
 	}
 	return (0);
 }

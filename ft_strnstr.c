@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 21:02:45 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/25 16:29:11 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/25 17:45:00 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			return ((char *)&haystack[j - i]);
 		j = j - i + 1;
 	}
-	return (0);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:29:18 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/25 16:30:13 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/25 17:55:10 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t		i;
 	char		*str;
 
-	str = (char *)malloc(sizeof(char) * len);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -26,5 +26,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		str[i] = s[i + start];
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }

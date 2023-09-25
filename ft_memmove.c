@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 17:03:32 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/10 17:20:22 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/25 17:10:21 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*dst1;
 	unsigned char	*src1;
 
 	dst1 = (unsigned char *)dst;
 	src1 = (unsigned char *)src;
-	i = n;
+	i = n ;
 	while (i > 0)
 	{
-		dst1[i] = src1[i];
 		i--;
+		dst1[i] = src1[i];
 	}
 	return (dst);
 }

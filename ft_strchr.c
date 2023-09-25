@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 17:57:17 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/25 16:27:30 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/25 18:23:18 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
+	size_t		i;
 	char	*str;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	str = (char *)s;
 	while (s[i])
@@ -25,7 +27,7 @@ char	*ft_strchr(const char *s, int c)
 			return (&str[i]);
 		i++;
 	}
+	if (c == 0 && str[i] == 0)
+		return (&str[i]);
 	return (NULL);
 }
-
-// not yet
