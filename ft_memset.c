@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 16:32:26 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/10 16:47:36 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/25 15:19:35 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *buf, int ch, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	*tmp;
 
 	i = 0;

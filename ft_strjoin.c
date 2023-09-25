@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:40:01 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/24 15:49:02 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/25 16:28:24 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while(s1[i])
+	while (s1[i])
 	{
 		str[i] = s1[i];
 		i++;
 	}
-	while(s2[j])
+	while (s2[j])
 	{
 		str[i] = s2[j];
 		i++;

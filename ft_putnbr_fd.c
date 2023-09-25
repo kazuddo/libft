@@ -3,12 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kazukipc <kazukipc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:19:31 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/25 11:19:39 by kazukipc         ###   ########.fr       */
+/*   Updated: 2023/09/25 16:26:13 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+void	ft_putnbr_fd(int n, int fd)
+{
+	a;
+}

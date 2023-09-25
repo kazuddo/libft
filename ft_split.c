@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 15:33:08 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/24 17:33:45 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/25 16:26:46 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,14 @@ char	**conduct_split(char const *s, char c, char **array)
 				free_array(array);
 				return (NULL);
 			}
-			ft_strlcpy(array[j], s[i], len);
+			ft_strlcpy(array[j], &s[i], len);
 			i += (len - 1);
 			j++;
 		}
 		i++;
 	}
 	array[j] = "\0";
+	return (array);
 }
 
 char	**ft_split(char const *s, char c)
@@ -86,6 +87,6 @@ char	**ft_split(char const *s, char c)
 	count = word_count(s, c);
 	array = (char **)malloc(sizeof(char *) * (count + 1));
 	conduct_split(s, c, array);
-	
+
 	return (array);
 }

@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:49:33 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/24 17:00:55 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/25 16:29:55 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len;
 	size_t	i;
 	size_t	j;
 	char	*str;
-	
+
 	i = 0;
 	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;

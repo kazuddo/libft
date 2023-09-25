@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 17:53:29 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/24 17:59:54 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/25 16:27:57 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	size_t	len;
 	size_t	i;
 
 	i = 0;
@@ -23,5 +22,5 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		f(i, &s[i]);
 		i++;
 	}
-	return;
+	return ;
 }

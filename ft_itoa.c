@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 17:34:07 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/24 17:43:53 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/25 16:24:43 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ char	*ft_itoa(int n)
 		len++;
 		flag = 1;
 	}
-	str = (char * )malloc(sizeof(char) * (len + 1));
-	while(len > 0)
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	while (len > 0)
 	{
 		str[len] = n % 10 - '0';
-		if(len == 0 && flag == 1)
+		if (len == 0 && flag == 1)
 			str[len] = '-';
 	}
 	return (str);

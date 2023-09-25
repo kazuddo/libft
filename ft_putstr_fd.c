@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kazukipc <kazukipc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:14:17 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/25 11:16:17 by kazukipc         ###   ########.fr       */
+/*   Updated: 2023/09/25 16:26:31 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
-	
-	if(!s)
+
+	if (!s)
 		return ;
 	i = 0;
 	while (s[i])
 	{
-		ft_putstr_fd(s[i], fd);
+		ft_putchar_fd(s[i], fd);
 		i++;
 	}
 }
