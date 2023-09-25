@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kazukipc <kazukipc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/24 17:58:59 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/25 11:13:16 by kazukipc         ###   ########.fr       */
+/*   Created: 2023/09/25 11:17:28 by kazukipc          #+#    #+#             */
+/*   Updated: 2023/09/25 11:18:57 by kazukipc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	write(fd, &c, 1);
+	ft_putstr_fd(*s, fd);
+	ft_putchar_fd('\n', fd);
 }
