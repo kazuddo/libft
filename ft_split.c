@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 15:33:08 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/25 16:26:46 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/26 17:14:49 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,22 @@ int	word_count(char const *s, char c)
 
 	i = 0;
 	flag = 0;
-	count = 1;
+	count = 0;
 	while (s[i])
 	{
-		if (s[i] == c && flag == 0)
+		if (s[i] != c && flag == 0)
 		{
 			count++;
 			flag = 1;
 		}
-		else
+		else if (s[i] == c)
 			flag = 0;
 		i++;
 	}
 	return (count);
 }
 
-char	**conduct_split(char const *s, char c, char **array)
+char	**conduct_split(char const *s, char c, char **array, int count)
 {
 	size_t	i;
 	size_t	j;
@@ -56,26 +56,24 @@ char	**conduct_split(char const *s, char c, char **array)
 
 	i = 0;
 	j = 0;
-	while (s[i])
+	while (s[i] && (int)j < count)
 	{
 		len = 0;
-		if (s[i] != c)
+		while (s[i] == c)
+			i++;
+		while (s[i+len] && s[i + len] != c)
+			len++;
+		array[j] = (char *)malloc(sizeof(char) * (len + 1));
+		if (array[j] == NULL)
 		{
-			while (s[i + len] != c)
-				len++;
-			array[j] = (char *)malloc(sizeof(char) * (len + 1));
-			if (array[j] == '\0')
-			{
-				free_array(array);
-				return (NULL);
-			}
-			ft_strlcpy(array[j], &s[i], len);
-			i += (len - 1);
-			j++;
+			free_array(array);
+			return (NULL);
 		}
-		i++;
+		ft_strlcpy(array[j], s + i, len + 1);
+		i += len;
+		j++;
 	}
-	array[j] = "\0";
+	array[j] = NULL;
 	return (array);
 }
 
@@ -84,9 +82,13 @@ char	**ft_split(char const *s, char c)
 	size_t	count;
 	char	**array;
 
+	if (!s)
+		return (NULL);
 	count = word_count(s, c);
 	array = (char **)malloc(sizeof(char *) * (count + 1));
-	conduct_split(s, c, array);
+	if (!array)
+		return (NULL);
+	conduct_split(s, c, array, count);
 
 	return (array);
 }

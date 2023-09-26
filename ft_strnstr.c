@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 21:02:45 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/25 17:45:00 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/26 13:32:02 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	while (j < len && haystack[j])
 	{
 		i = 0;
-		while (needle[i] && haystack[j] && needle[i] == haystack[j])
+		while (needle[i] && haystack[j] && needle[i] == haystack[j] && j < len)
 		{
 			i++;
 			j++;

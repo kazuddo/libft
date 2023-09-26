@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 17:57:17 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/25 18:23:18 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/26 13:03:15 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 	str = (char *)s;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return (&str[i]);
 		i++;
 	}
