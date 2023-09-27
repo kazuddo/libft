@@ -6,21 +6,21 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 21:25:16 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/26 19:18:13 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/27 15:01:56 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_overflow(long *num, char m, int isminus)
+static int	is_overflow(long *num, char m, int isminus)
 {
 	int	flag;
 
 	flag = 0;
 	if (isminus == 1)
 	{
-		if ((*num == LONG_MAX / 10 && (m - '0') > 7) || 
-			*num > LONG_MAX / 10)
+		if ((*num == LONG_MAX / 10 && (m - '0') > 7)
+			|| *num > LONG_MAX / 10)
 		{
 			*num = (int) LONG_MAX;
 			flag = 1;
@@ -28,18 +28,17 @@ int	is_overflow(long *num, char m, int isminus)
 	}
 	else
 	{
-		if ((*num == LONG_MAX / 10 && (m - '0') > 8) ||
-			*num > LONG_MAX / 10)
+		if ((*num == LONG_MAX / 10 && (m - '0') > 8)
+			|| *num > LONG_MAX / 10)
 		{
 			*num = (int) LONG_MIN;
 			flag = 1;
 		}
 	}
 	return (flag);
-
 }
 
-int	ft_is_space(char c)
+static int	ft_is_space(char c)
 {
 	if (c == 32 || (9 <= c && c <= 13))
 		return (1);
@@ -50,29 +49,25 @@ int	ft_atoi(const char *str)
 {
 	size_t	i;
 	long	num;
-	int	isminus;
+	int		isminus;
 
 	num = 0;
 	i = 0;
-	while (ft_is_space(str[i]) == 1)
+	isminus = 1;
+	while (str[i] && ft_is_space(str[i]) == 1)
 		i++;
 	if (str[i] == '-')
-		isminus = -1;
-	else if (str[i] == '+')
-		isminus = 1;
-	else if ('0' <= str[i] && str[i] <= '9')
 	{
-		isminus = 1;
-		num += str[i] - '0';
+		isminus = -1;
+		i++;
 	}
-	else
-		return (0);
-	i++;
+	else if (str[i] == '+')
+		i++;
 	while ('0' <= str[i] && str[i] <= '9')
 	{
-		if(is_overflow(&num, str[i], isminus))
+		if (is_overflow(&num, str[i], isminus))
 			return (num);
-		num = 10 * num + (str[i] -'0');
+		num = 10 * num + (str[i] - '0');
 		i++;
 	}
 	return (isminus * num);

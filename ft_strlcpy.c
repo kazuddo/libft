@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 17:17:25 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/25 17:43:48 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/27 15:25:12 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	len = ft_strlen(src);
 	if (dstsize == 0)
 		return (len);
-	if (!dst)
-		return (0);
 	while (src[i] && i < (dstsize - 1))
 	{
 		dst[i] = src[i];

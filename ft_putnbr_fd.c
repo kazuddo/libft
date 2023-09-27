@@ -6,13 +6,13 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 11:19:31 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/26 16:16:16 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/27 15:10:02 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_absnum(int n)
+static unsigned int	ft_absnum(int n)
 {
 	if (n < 0)
 		return (n * (-1));
@@ -23,7 +23,7 @@ unsigned int	ft_absnum(int n)
 void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	num;
-	
+
 	if (n < 0)
 		ft_putchar_fd('-', fd);
 	num = ft_absnum(n);

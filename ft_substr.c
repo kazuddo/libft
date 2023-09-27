@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 15:29:18 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/26 19:32:07 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/27 14:21:56 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s) || len == 0)
-		return (ft_calloc(1,1));
-	if (ft_strlen(s+start) < len)
-		len = ft_strlen(s+start);
+		return (ft_calloc(1, 1));
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);

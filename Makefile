@@ -6,7 +6,7 @@
 #    By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/25 14:59:17 by kdodo             #+#    #+#              #
-#    Updated: 2023/09/25 16:16:55 by kdodo            ###   ########.fr        #
+#    Updated: 2023/09/27 15:05:05 by kdodo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ OBJS = $(SRCS:%.c=%.o)
 CC = cc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
-INC = -I ./includes
+INC = -I .
 
 .PHONY: all
 all: $(NAME)

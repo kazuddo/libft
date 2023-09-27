@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 16:54:56 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/25 15:19:21 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/27 14:31:15 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*dst1;
 	unsigned char	*src1;
 
+	if (!dst && !src)
+		return (NULL);
 	dst1 = (unsigned char *)dst;
 	src1 = (unsigned char *)src;
 	i = 0;

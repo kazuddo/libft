@@ -6,13 +6,13 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 17:34:07 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/26 19:41:54 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/27 15:08:07 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	check_len(int n)
+static size_t	check_len(int n)
 {
 	size_t	count;
 	long	num;
@@ -22,7 +22,7 @@ size_t	check_len(int n)
 	if (n < 0)
 	{
 		count++;
-		num *= -1; 
+		num *= -1;
 	}
 	while (num / 10 > 0)
 	{

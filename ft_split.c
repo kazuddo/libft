@@ -6,15 +6,15 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 15:33:08 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/26 17:14:49 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/27 15:36:17 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_array(char **array)
+static void	free_array(char **array)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (array[i] != NULL)
@@ -25,15 +25,17 @@ void	free_array(char **array)
 	free(array);
 }
 
-int	word_count(char const *s, char c)
+static size_t	word_count(char const *s, char c)
 {
 	size_t	i;
 	int		flag;
-	int		count;
+	size_t	count;
 
 	i = 0;
 	flag = 0;
 	count = 0;
+	if (c == '\0')
+		return (1);
 	while (s[i])
 	{
 		if (s[i] != c && flag == 0)
@@ -48,7 +50,7 @@ int	word_count(char const *s, char c)
 	return (count);
 }
 
-char	**conduct_split(char const *s, char c, char **array, int count)
+static char	**conduct_split(char const *s, char c, char **array, size_t count)
 {
 	size_t	i;
 	size_t	j;
@@ -56,12 +58,12 @@ char	**conduct_split(char const *s, char c, char **array, int count)
 
 	i = 0;
 	j = 0;
-	while (s[i] && (int)j < count)
+	while (s[i] && j < count)
 	{
 		len = 0;
 		while (s[i] == c)
 			i++;
-		while (s[i+len] && s[i + len] != c)
+		while (s[i + len] && s[i + len] != c)
 			len++;
 		array[j] = (char *)malloc(sizeof(char) * (len + 1));
 		if (array[j] == NULL)
@@ -88,7 +90,7 @@ char	**ft_split(char const *s, char c)
 	array = (char **)malloc(sizeof(char *) * (count + 1));
 	if (!array)
 		return (NULL);
-	conduct_split(s, c, array, count);
-
+	if (conduct_split(s, c, array, count) == NULL)
+		return (NULL);
 	return (array);
 }

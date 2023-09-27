@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 18:04:55 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/26 13:02:46 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/27 15:30:28 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strrchr(const char *s, int c)
 	size_t		pos;
 	char		*p;
 
-	if(!s)
-		return (NULL);
 	p = (char *)s;
 	i = ft_strlen(s);
 	pos = 0;

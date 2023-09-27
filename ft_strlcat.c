@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 17:34:40 by kazukipc          #+#    #+#             */
-/*   Updated: 2023/09/26 16:06:47 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/27 15:23:28 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	res;
 
 	src_size = ft_strlen(src);
-	if (!dst)
+	if (size == 0)
 		return (src_size);
 	dst_size = ft_strlen(dst);
 	s = (char *)src;

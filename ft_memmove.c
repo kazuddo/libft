@@ -6,7 +6,7 @@
 /*   By: kdodo <kdodo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/10 17:03:32 by kdodo             #+#    #+#             */
-/*   Updated: 2023/09/26 12:53:21 by kdodo            ###   ########.fr       */
+/*   Updated: 2023/09/27 14:35:01 by kdodo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	unsigned char	*dst1;
 	unsigned char	*src1;
 
-	dst1 = (unsigned char *)dst;
-	src1 = (unsigned char *)src;
+	if (!dst && !src)
+		return (NULL);
 	if (dst > src)
 	{
-		i = n ;
+		dst1 = (unsigned char *)dst;
+		src1 = (unsigned char *)src;
+		i = n;
 		while (i > 0)
 		{
 			i--;
@@ -30,13 +32,6 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		}
 	}
 	else
-	{
-		i = 0;
-		while (i < n)
-		{
-			dst1[i] = src1[i];
-			i++;
-		}
-	}
+		ft_memcpy(dst, src, n);
 	return (dst);
 }
